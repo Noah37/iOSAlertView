@@ -46,3 +46,16 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
+
+// 5. Add below line
+//===============================
+afterEvaluate {
+    android.libraryVariants.each {variant->
+        publishing.publications.create(variant.name,MavenPublication){
+            from components.findByName(variant.name)
+            groupId = 'com.noah37'//自定义
+            artifactId = 'iosalertview'//自定义
+            version = '0.0.2'//自定义
+        }
+    }
+}
