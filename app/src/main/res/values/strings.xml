@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">iOSAlertView</string>
+    <string name="ios_alert_title" translatable="false">iOSActionSheet</string>
+    <string name="action_sheet_title" translatable="false">ActionSheet</string>
+
+</resources>
