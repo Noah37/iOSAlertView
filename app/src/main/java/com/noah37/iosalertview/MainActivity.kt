@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         actionBtb = binding.action
 
         alertBtb.setOnClickListener{
-            val alertController = UIAlertController.alerControllerWithTitle("提示", "这是提示内容，你想要提示些什么呢？" , UIAlertControllerStyle.ACTIONSHEET)
+            val alertController = UIAlertController.alerControllerWithTitle("", "" , UIAlertControllerStyle.ACTIONSHEET)
 
             alertController.addAction(UIAlertAction("重要选项", UIAlertActionStyle.DESTRUCTIVE) { action ->
                 Toast.makeText(this, action.title, Toast.LENGTH_SHORT).show()

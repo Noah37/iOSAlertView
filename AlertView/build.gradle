@@ -55,7 +55,7 @@ afterEvaluate {
             from components.findByName(variant.name)
             groupId = 'com.noah37'//自定义
             artifactId = 'iosalertview'//自定义
-            version = '0.0.3'//自定义
+            version = '0.0.4'//自定义
         }
     }
 }

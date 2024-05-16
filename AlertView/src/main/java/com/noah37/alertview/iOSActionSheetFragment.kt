@@ -24,6 +24,7 @@ class iOSActionSheetFragment(private val title: String, private val message: Str
     private lateinit var tvMessage: AppCompatTextView
     private lateinit var tvCancel: AppCompatTextView
     private lateinit var actionsLayout: LinearLayout
+    private lateinit var tvHeader: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +45,7 @@ class iOSActionSheetFragment(private val title: String, private val message: Str
         tvMessage = view.findViewById(R.id.tvMessage)
         tvCancel = view.findViewById(R.id.tvCancel)
         actionsLayout = view.findViewById(R.id.actionsLayout)
+        tvHeader = view.findViewById(R.id.tvHeader)
 
         // Set up view
         initView(view)
@@ -76,6 +78,7 @@ class iOSActionSheetFragment(private val title: String, private val message: Str
         // In case of title or message is empty
         if (title.isEmpty()) tvTitle.visibility = View.GONE
         if (message.isEmpty()) tvMessage.visibility = View.GONE
+        if (title.isEmpty() && message.isEmpty()) tvHeader.visibility = View.GONE
         if (cancelButtonText.isEmpty()) tvCancel.text = requireContext().getString(R.string.cancel)
 
         // Inflate action views
@@ -86,6 +89,7 @@ class iOSActionSheetFragment(private val title: String, private val message: Str
      * Inflate action views
      */
     private fun inflateActionsView(actionsLayout: LinearLayout?, actions: ArrayList<UIAlertAction>) {
+        var index:Int = 0
         for (action in actions) {
             if (action.style == UIAlertActionStyle.CANCEL) {
                 tvCancel.text = action.title
@@ -107,6 +111,12 @@ class iOSActionSheetFragment(private val title: String, private val message: Str
                 view = LayoutInflater.from(context).inflate(R.layout.action_layout_light, null)
             else if (theme == AlertThemeStyle.DARK)
                 view = LayoutInflater.from(context).inflate(R.layout.action_layout_dark, null)
+
+            if (index == 0 && tvHeader.visibility == View.GONE) {
+                val separator:View? = view?.findViewById(R.id.tvSeparator)
+                separator?.visibility = View.GONE
+            }
+            index += 1
 
             val tvAction:AppCompatTextView = view!!.findViewById(R.id.tvAction)
 
