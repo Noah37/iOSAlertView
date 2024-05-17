@@ -42,9 +42,9 @@ class ActionSheetFragment(private val title: String, private val message: String
         // Inflate view according to theme selected. Default is AlertTheme.LIGHT
         var view:View? = null
         if (theme == AlertThemeStyle.LIGHT)
-            view = inflater.inflate(R.layout.alert_layout_light, container, false)
+            view = inflater.inflate(R.layout.action_sheet_layout_light, container, false)
         else if (theme == AlertThemeStyle.DARK)
-             view = inflater.inflate(R.layout.alert_layout_dark, container, false)
+             view = inflater.inflate(R.layout.action_sheet_layout_dark, container, false)
 
         tvTitle = view!!.findViewById(R.id.tvTitle)
         tvMessage = view.findViewById(R.id.tvMessage)

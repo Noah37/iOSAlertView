@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
+              android:layout_width="wrap_content"
               android:layout_height="wrap_content"
+              android:layout_columnWeight="1"
               android:orientation="vertical">
 
     <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="0.5dp"
             android:alpha="0.2"
             android:id="@+id/tvSeparator"
             android:background="@color/black" />
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <TextView
             android:id="@+id/tvAction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_regular"
             android:gravity="center"
             android:padding="16dp"
             android:paddingEnd="16dp"
             android:paddingStart="16dp"
+            android:text="确认"
             android:textColor="@android:color/holo_red_dark"
-            android:textSize="16sp" />
+            android:textSize="16sp"/>
 </LinearLayout>

@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var alertBtb:Button
     private lateinit var actionBtb:Button
+    private lateinit var twoAlertBtb:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         alertBtb = binding.alert
         actionBtb = binding.action
+        twoAlertBtb = binding.twoButton
 
         alertBtb.setOnClickListener{
             val alertController = UIAlertController.alerControllerWithTitle("", "" , UIAlertControllerStyle.ACTIONSHEET)
@@ -40,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         actionBtb.setOnClickListener{
-            val alert = UIAlertView("The Post", "What do you want to do with this post?", UIAlertControllerStyle.ACTIONSHEET)
+            val alert = UIAlertController.alerControllerWithTitle("The Post", "What do you want to do with this post?", UIAlertControllerStyle.ALERT)
 
             alert.addAction(UIAlertAction("Bookmark", UIAlertActionStyle.DESTRUCTIVE) { action ->
                 Toast.makeText(this, action.title, Toast.LENGTH_SHORT).show()
@@ -51,11 +53,24 @@ class MainActivity : AppCompatActivity() {
             alert.addAction(UIAlertAction("Share", UIAlertActionStyle.DEFAULT) { action ->
                 Toast.makeText(this, action.title, Toast.LENGTH_SHORT).show()
             })
-            alert.addAction(UIAlertAction("Cancel", UIAlertActionStyle.DEFAULT) { action ->
+            alert.addAction(UIAlertAction("Cancel", UIAlertActionStyle.CANCEL) { action ->
                 Toast.makeText(this, action.title, Toast.LENGTH_SHORT).show()
             })
 
-            alert.show(this)
+            presentModalViewController(alert)
+        }
+
+        twoAlertBtb.setOnClickListener{
+            val alert = UIAlertController.alerControllerWithTitle("The Post", "What do you want to do with this post?", UIAlertControllerStyle.ALERT)
+
+            alert.addAction(UIAlertAction("Bookmark", UIAlertActionStyle.DESTRUCTIVE) { action ->
+                Toast.makeText(this, action.title, Toast.LENGTH_SHORT).show()
+            })
+            alert.addAction(UIAlertAction("Cancel", UIAlertActionStyle.CANCEL) { action ->
+                Toast.makeText(this, action.title, Toast.LENGTH_SHORT).show()
+            })
+
+            presentModalViewController(alert)
         }
     }
 }

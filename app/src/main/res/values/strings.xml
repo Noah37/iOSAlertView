@@ -2,5 +2,6 @@
     <string name="app_name">iOSAlertView</string>
     <string name="ios_alert_title" translatable="false">iOSActionSheet</string>
     <string name="action_sheet_title" translatable="false">ActionSheet</string>
+    <string name="two_button_alert_title" translatable="false">Two button alert</string>
 
 </resources>

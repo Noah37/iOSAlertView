@@ -8,8 +8,10 @@
         <entry key="AlertView/src/main/res/font/roboto_regular.xml" value="0.18072916666666666" />
         <entry key="AlertView/src/main/res/layout/action_layout_dark.xml" value="0.13645833333333332" />
         <entry key="AlertView/src/main/res/layout/action_layout_light.xml" value="0.15052083333333333" />
+        <entry key="AlertView/src/main/res/layout/action_sheet_layout_light.xml" value="0.335" />
         <entry key="AlertView/src/main/res/layout/alert_layout_dark.xml" value="0.15052083333333333" />
-        <entry key="AlertView/src/main/res/layout/alert_layout_light.xml" value="0.13645833333333332" />
+        <entry key="AlertView/src/main/res/layout/alert_layout_light.xml" value="0.1654320987654321" />
+        <entry key="AlertView/src/main/res/layout/alert_layout_two_button_light.xml" value="0.2776268115942029" />
         <entry key="AlertView/src/main/res/layout/fragment_action_sheet.xml" value="0.1375" />
         <entry key="AlertView/src/main/res/layout/fragment_dialog.xml" value="0.1375" />
         <entry key="AlertView/src/main/res/layout/fragment_i_o_s_action_sheet.xml" value="0.14635416666666667" />

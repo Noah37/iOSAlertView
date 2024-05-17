@@ -34,7 +34,7 @@ open class UIAlertController {
                 bottomSheet.show(activity.supportFragmentManager, bottomSheet.tag)
             }
             UIAlertControllerStyle.ALERT -> {
-                val bottomSheet = iOSActionSheetFragment(title, message, actions, AlertThemeStyle.LIGHT, "")
+                val bottomSheet = iOSAlertFragment(title, message, actions, AlertThemeStyle.LIGHT, "")
                 bottomSheet.show(activity.supportFragmentManager, bottomSheet.tag)
             }
         }
