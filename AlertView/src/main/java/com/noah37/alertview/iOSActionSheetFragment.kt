@@ -81,6 +81,10 @@ class iOSActionSheetFragment(private val title: String, private val message: Str
         if (title.isEmpty() && message.isEmpty()) tvHeader.visibility = View.GONE
         if (cancelButtonText.isEmpty()) tvCancel.text = requireContext().getString(R.string.cancel)
 
+        tvCancel.setOnClickListener {
+            dismiss()
+        }
+
         // Inflate action views
         inflateActionsView(actionsLayout, actions)
     }
